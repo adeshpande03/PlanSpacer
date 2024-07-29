@@ -17,7 +17,7 @@ def geocode_address(address):
         raise Exception(f"Geocoding failed: {geocode_result['status']}")
 
 
-def get_nearby_activities(address, activity, radius=1):
+def get_nearby_activities(address, activity, radius=20):
     try:
         lat, lng = geocode_address(address)
     except Exception as e:
