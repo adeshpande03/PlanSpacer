@@ -1,5 +1,3 @@
-// static/js/scripts.js
-
 let friendCount = 1;
 
 function initializeAutocomplete(id) {
@@ -18,8 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
     input.name = "friend_addresses";
     input.id = `friend_address_${friendCount}`;
     input.required = true;
-    input.classList.add("autocomplete");
-    document.forms[0].insertBefore(input, this);
-    initializeAutocomplete(input.id); // Initialize autocomplete for the new input
+    document.getElementById("friend_addresses_container").appendChild(input);
+    initializeAutocomplete(input.id);
   });
+
+  document
+    .getElementById("delete_friend")
+    .addEventListener("click", function () {
+      if (friendCount > 1) {
+        let friendContainer = document.getElementById(
+          "friend_addresses_container"
+        );
+        friendContainer.removeChild(friendContainer.lastElementChild);
+        friendCount -= 1;
+      }
+    });
 });

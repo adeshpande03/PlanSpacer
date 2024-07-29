@@ -1,51 +1,58 @@
-/* static/css/styles.css */
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    text-align: center;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  text-align: center;
 }
 
 main {
-    padding: 20px;
+  padding: 20px;
 }
 
+#friend_addresses_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-input, button {
-    padding: 10px;
-    font-size: 16px;
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
 }
 
 .autocomplete {
-    position: relative;
-    z-index: 1000;
+  position: relative;
+  z-index: 1000;
 }
 
 footer {
-    position: sticky;
-    bottom: 100;
-    left: 0;
-    width: 100%;
-  }
-  
+  position: sticky;
+  bottom: 100;
+  left: 0;
+  width: 100%;
+}
 
 footer ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-  }
-  
-  footer li {
-    margin: 0 10px;
-  }
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+footer li {
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
