@@ -1,0 +1,19 @@
+<!-- templates/index.html -->
+{% extends "base.html" %} {% block content %}
+<form action="{{ url_for('results') }}" method="POST">
+  <label for="activity">Activity:</label>
+  <input type="text" id="activity" name="activity" required />
+
+  <label for="user_address">Your Address:</label>
+  <input type="text" id="user_address" name="user_address" required />
+
+  <label for="friend_addresses">Friend Addresses:</label>
+  <input type="text" id="friend_addresses" name="friend_addresses" required />
+  <button type="button" id="add_friend">Add Another Friend</button>
+
+  <button type="submit">Find Activities</button>
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&libraries=places"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+{% endblock %}
