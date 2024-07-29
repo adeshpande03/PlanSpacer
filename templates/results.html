@@ -1,20 +1,22 @@
 {% extends "base.html" %} {% block content %}
-<h2>Best Activity Options</h2>
-<ul>
-  {% for activity in best_activities %}
-  <li>
-    <h3>{{ activity.activity.name }}</h3>
+<h1 class="title">Most Equitable Matches</h1>
+{% for activity in best_activities %}
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">{{ activity.activity.name }}</p>
+  </header>
+  <div class="card-content">
     <p>Location: {{ activity.activity.vicinity }}</p>
-    <p>Driving Times:</p>
     <ul>
       <li>From your address: {{ activity.driving_times[0] }} minutes</li>
       {% for time, address in zip(activity.driving_times[1:], friend_addresses)
       %}
       <li>From {{ address }}: {{ time }} minutes</li>
       {% endfor %}
+      <a href="{{ activity.gmaps_link }}" target="_blank"
+        >View on Google Maps</a
+      >
     </ul>
-    <a href="{{ activity.gmaps_link }}" target="_blank">View on Google Maps</a>
-  </li>
-  {% endfor %}
-</ul>
-{% endblock %}
+  </div>
+</div>
+{% endfor %} {% endblock %}

@@ -1,10 +1,28 @@
 let friendCount = 1;
 
-function initializeAutocomplete(id) {
-  var input = document.getElementById(id);
-  var autocomplete = new google.maps.places.Autocomplete(input);
-}
 
+function initializeAutocomplete(id) {
+  let input = document.getElementById(id);
+  let autocomplete = new google.maps.places.Autocomplete(input);
+
+  // Observer to apply styles dynamically
+  let observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.addedNodes.length) {
+        mutation.addedNodes.forEach(function (node) {
+          if (node.className.includes("pac-item")) {
+            node.style.backgroundColor = "#fff"; // Example style
+          }
+        });
+      }
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+}
 document.addEventListener("DOMContentLoaded", function () {
   initializeAutocomplete("user_address");
   initializeAutocomplete("friend_addresses");
@@ -15,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     input.type = "text";
     input.name = "friend_addresses";
     input.id = `friend_address_${friendCount}`;
+    input.className = "input friend-input";
     input.required = true;
     document.getElementById("friend_addresses_container").appendChild(input);
     initializeAutocomplete(input.id);

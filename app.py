@@ -46,7 +46,7 @@ def results():
                 "gmaps_link": f"https://www.google.com/maps/dir/?api=1&destination={activity_location['lat']},{activity_location['lng']}",
             }
         )
-    best_activities = find_best_activity(formatted_travel_times)
+    best_activities = find_best_activity(formatted_travel_times[:10])
 
     return render_template(
         "results.html",

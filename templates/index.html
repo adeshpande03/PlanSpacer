@@ -1,19 +1,51 @@
 {% extends "base.html" %} {% block content %}
 <form action="{{ url_for('results') }}" method="POST">
-  <label for="activity">Activity:</label>
-  <input type="text" id="activity" name="activity" required />
-
-  <label for="user_address">Your Address:</label>
-  <input type="text" id="user_address" name="user_address" required />
-
-  <div id="friend_addresses_container">
-    <label for="friend_addresses">Friend Addresses:</label>
-    <input type="text" id="friend_addresses" name="friend_addresses" required />
+  <div class="field">
+    <label class="label" for="activity">Activity:</label>
+    <div class="control short-input">
+      <input class="input" type="text" id="activity" name="activity" required />
+    </div>
   </div>
-  <button type="button" id="add_friend">Add Another Friend</button>
-  <button type="button" id="delete_friend">Delete Last Friend</button>
 
-  <button type="submit">Find Activities</button>
+  <div class="field">
+    <label class="label" for="user_address">Your Address:</label>
+    <div class="control med-input">
+      <input
+        class="input"
+        type="text"
+        id="user_address"
+        name="user_address"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="friend_addresses">Friend Addresses:</label>
+    <div id="friend_addresses_container" class="control med-input">
+      <input
+        class="input friend-input"
+        type="text"
+        id="friend_addresses"
+        name="friend_addresses"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="buttonHolder">
+    <button class="button is-success is-outlined" type="button" id="add_friend">
+      Add Another Friend
+    </button>
+    <button
+      class="button is-danger is-outlined"
+      type="button"
+      id="delete_friend"
+    >
+      Delete Friend
+    </button>
+    <button class="button is-primary" type="submit">Find Activities</button>
+  </div>
 </form>
 
 <script src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&libraries=places"></script>

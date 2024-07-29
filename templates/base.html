@@ -4,42 +4,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Activity Planner</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles.css') }}"
-    />
+    <title>PlanSpacer</title>
     <link
       rel="icon"
       href="{{ url_for('static', filename= 'img/tempIcon.png') }}"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
     <script src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&libraries=places"></script>
   </head>
   <body>
-    <header>
-      <h1>PlanSpacer</h1>
-    </header>
-    <main>{% block content %}{% endblock %}</main>
+    <div id="page-container">
+      <nav class="styled-navbar">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">PLANSPACER</a>
+        </div>
+      </nav>
+      <main>{% block content %}{% endblock %}</main>
+      <footer>
+        <ul>
+          <li>Akhil Deshpande</li>
+          <li>
+            <a
+              href="https://github.com/adeshpande03/planspacer"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </li>
+          <li>
+            <div class="bmc-button-container">
+              <script
+                type="text/javascript"
+                src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+                data-name="bmc-button"
+                data-slug="impgriffin"
+                data-color="#40DCA5"
+                data-emoji=""
+                data-font="Cookie"
+                data-text="Buy me a coffee"
+                data-outline-color="#000000"
+                data-font-color="#ffffff"
+                data-coffee-color="#FFDD00"
+              ></script>
+            </div>
+          </li>
+        </ul>
+      </footer>
+    </div>
   </body>
-  <footer>
-    <ul>
-      <li>Akhil Deshpande</li>
-      <li>
-        <script
-          type="text/javascript"
-          src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
-          data-name="bmc-button"
-          data-slug="impgriffin"
-          data-color="#40DCA5"
-          data-emoji=""
-          data-font="Cookie"
-          data-text="Buy me a coffee"
-          data-outline-color="#000000"
-          data-font-color="#ffffff"
-          data-coffee-color="#FFDD00"
-        ></script>
-      </li>
-    </ul>
-  </footer>
 </html>

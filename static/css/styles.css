@@ -1,46 +1,100 @@
+html,
 body {
-  font-family: Arial, sans-serif;
+  height: 100%;
   margin: 0;
-  padding: 0;
+}
+body {
+  margin: 0;
+  font-family: "Rajdhani", sans-serif;
 }
 
-header {
-  background-color: #f8f9fa;
-  padding: 10px 20px;
+.styled-navbar {
   text-align: center;
+  padding: 10px 0;
 }
 
-main {
-  padding: 20px;
+.navbar-item {
+  color: white;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 1rem;
 }
-
-#friend_addresses_container {
+#page-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  min-height: 100vh;
 }
+main {
+  flex: 1;
+  margin: 1rem;
+}
+.card-header {
+  padding: 0 !important;
+}
+.short-input {
+  max-width: 25rem;
+}
+
+.med-input {
+  max-width: 50rem;
+}
+.friend-input {
+  margin-bottom: 0.5rem;
+}
+header {
+  padding: 10px 20px;
+  text-align: left;
+}
+main {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.pac-container {
+  border-radius: 6px !important;
+  /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1) !important; */
+  background-color: hsl(220, 14%, 9%) !important;
+  border-top: none;
+}
+
+.pac-item,
+.pac-matched,
+.pac-item-query {
+  background-color: #363636 !important;
+  color: #fff;
+  border: none;
+  /* border-radius: 6px; */
+}
+
+.pac-item {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
-input,
-button {
-  padding: 10px;
-  font-size: 16px;
-}
-
-.autocomplete {
-  position: relative;
-  z-index: 1000;
-}
-
 footer {
   position: sticky;
   bottom: 100;
   left: 0;
   width: 100%;
+}
+.buttonHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  width: 100%;
+  max-width: 200px;
 }
 
 footer ul {
@@ -55,4 +109,8 @@ footer li {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+}
+.bmc-button-container {
+  transform: scale(0.75);
+  transform-origin: left center;
 }
