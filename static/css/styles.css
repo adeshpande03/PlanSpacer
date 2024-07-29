@@ -31,3 +31,21 @@ input, button {
     position: relative;
     z-index: 1000;
 }
+
+footer {
+    position: sticky;
+    bottom: 100;
+    left: 0;
+    width: 100%;
+  }
+  
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  footer li {
+    margin: 0 10px;
+  }
