@@ -112,14 +112,30 @@ footer li {
 }
 .bmc-button-container {
   transform: scale(0.75);
-  transform-origin: left center;
+  transform-origin: center center;
+}
+#bmac {
+  padding: 0;
+  margin: 0;
 }
 
 @media screen and (max-width: 600px) {
   .med-input {
-    max-width: 80%;
+    max-width: 100%;
   }
   .small-input {
-    max-width: 80%;
+    max-width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+  main {
+    padding: 0;
+    margin: auto;
+    width: 90%;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
   }
 }
