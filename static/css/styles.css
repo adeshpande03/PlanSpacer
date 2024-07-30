@@ -114,3 +114,12 @@ footer li {
   transform: scale(0.75);
   transform-origin: left center;
 }
+
+@media screen and (max-width: 600px) {
+  .med-input {
+    max-width: 80%;
+  }
+  .small-input {
+    max-width: 80%;
+  }
+}
